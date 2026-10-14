@@ -20,5 +20,11 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install Bandit
+        run: python -m pip install bandit
+
+      - name: Run security scan
+        run: bandit -r student.py
+
       - name: Run unit tests
         run: python -m unittest discover -v
